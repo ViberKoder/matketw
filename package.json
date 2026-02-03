@@ -1,0 +1,21 @@
+{
+  "name": "boost-marketplace",
+  "version": "1.0.0",
+  "description": "Telegram Boost Votes Marketplace",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:bot\" \"npm run dev:backend\" \"npm run dev:app\"",
+    "dev:bot": "cd bot && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:app": "cd mini-app && npm run dev",
+    "build": "npm run build:app",
+    "build:app": "cd mini-app && npm run build",
+    "install:all": "npm install && cd bot && npm install && cd ../backend && npm install && cd ../mini-app && npm install"
+  },
+  "keywords": ["telegram", "boost", "marketplace"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
