@@ -4,9 +4,10 @@
   "description": "Telegram Mini App for Boost Marketplace",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm install && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "npm install"
   },
   "dependencies": {
     "next": "^14.0.4",
