@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import axios from 'axios';
 import { getTelegramUserId, readyMiniApp, expandMiniApp } from '@/lib/telegram';
 
-export default function CreateRequestPage() {
+function CreateRequestForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const channelId = searchParams.get('channel') || '';
@@ -144,5 +144,13 @@ export default function CreateRequestPage() {
         </button>
       </div>
     </main>
+  );
+}
+
+export default function CreateRequestPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen p-4 flex items-center justify-center">Загрузка...</div>}>
+      <CreateRequestForm />
+    </Suspense>
   );
 }
